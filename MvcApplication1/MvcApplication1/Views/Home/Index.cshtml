@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+
+}
+<h3>We suggest the following:</h3>
+<input id="Text1" type="text" data-bind="value: firstName" />
+<span data-bind="html: firstName"></span>
+
+<ul data-bind="template:{foreach: items , beforeRemove: hidePlanetElement,
+    afterAdd: showPlanetElement}">
+    <li>
+        <div data-bind="html: mealName">
+            
+        </div>
+        <input id="Button1" type="button" value="x" data-bind="click: $parent.removeItem" />
+    </li>
+</ul>
+
+<div data-bind="fadeInOut: items().length == 0"> ffsdfsdfsdfdsfd
+</div>
+<input id="Button1" type="button" value="button" data-bind="click: add" />
+<script src="~/Scripts/Home/Index.js"></script>
+    

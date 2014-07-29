@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="adb7630806114060be52933918cb5de4" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Attribute" Width="1.5" PointX="18.5" PointY="57.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AttributeGroup" Width="1.5" PointX="15.5" PointY="38.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AttributeGroupItem" Width="1.5" PointX="23.75" PointY="48.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AttributeItem" Width="1.5" PointX="20.75" PointY="60.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AttributeType" Width="1.5" PointX="16.25" PointY="35.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BanquetEnquiry" Width="1.5" PointX="20.75" PointY="48.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BanquetImageGallary" Width="1.5" PointX="17.75" PointY="53.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Category" Width="1.5" PointX="15.5" PointY="41.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.City" Width="1.5" PointX="8.75" PointY="45.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ContactSubject" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ContactU" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ContentType" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Coupon" Width="1.5" PointX="16.25" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CouponOrderMapping" Width="1.5" PointX="5.25" PointY="58.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CouponOutletMapping" Width="1.5" PointX="18.5" PointY="62.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Cuisine" Width="1.5" PointX="18.25" PointY="68.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Customer" Width="1.5" PointX="3" PointY="55.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CustomerActivityCode" Width="1.5" PointX="8" PointY="68.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CustomerAddress" Width="1.5" PointX="5.25" PointY="53.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CustomerHistory" Width="1.5" PointX="10.25" PointY="57.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CustomerRole" Width="1.5" PointX="0.75" PointY="59" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CustomerToken" Width="1.5" PointX="5.25" PointY="62" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CustomerVerification" Width="1.5" PointX="5.25" PointY="65.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EmailSubscriber" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ErrorLog" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Facility" Width="1.5" PointX="19.25" PointY="65.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HomeImageGallary" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ImportMenuTemp" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Location" Width="1.5" PointX="11" PointY="44.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Log" Width="1.5" PointX="5.25" PointY="68" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MessageTemplate" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MobileBanner" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OccasionType" Width="1.5" PointX="18.5" PointY="41.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Order" Width="1.5" PointX="7.5" PointY="54.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OrderActivityCode" Width="1.5" PointX="7.5" PointY="62.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OrderDeliveryType" Width="1.5" PointX="5.25" PointY="50.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OrderHistory" Width="1.5" PointX="9.75" PointY="53.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OrderItem" Width="1.5" PointX="9.75" PointY="61.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OrderItemAttributeItem" Width="1.5" PointX="12" PointY="66.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OrderNote" Width="1.5" PointX="9.75" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OrderSource" Width="1.5" PointX="5.25" PointY="47" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OrderStatu" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OrderTax" Width="1.5" PointX="9.75" PointY="49.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Outlet" Width="1.5" PointX="13.25" PointY="52.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OutletBanquet" Width="1.5" PointX="15.5" PointY="47.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OutletBanquetPackage" Width="1.5" PointX="15.5" PointY="53.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OutletBuffet" Width="1.5" PointX="15.5" PointY="56.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OutletContact" Width="1.5" PointX="15.5" PointY="61.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OutletCuisineMapping" Width="1.5" PointX="20.5" PointY="54.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OutletDetail" Width="1.5" PointX="15.5" PointY="68.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OutletFacilityMapping" Width="1.5" PointX="21.5" PointY="57.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OutletFixedMeal" Width="1.5" PointX="15.5" PointY="75.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OutletImageGallary" Width="1.5" PointX="15.5" PointY="79.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OutletMedia" Width="1.5" PointX="15.5" PointY="83.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OutletOffer" Width="1.5" PointX="15.5" PointY="86.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OutletProductExclude" Width="1.5" PointX="23" PointY="53.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OutletRating" Width="1.5" PointX="15.5" PointY="90.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OutletTiming" Width="1.5" PointX="15.5" PointY="93.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Permission" Width="1.5" PointX="3" PointY="67.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Product" Width="1.5" PointX="17.75" PointY="46.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ProductCategoryMapping" Width="1.5" PointX="20" PointY="44.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.QueuedEmail" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.QueuedSM" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Resource" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ScheduleTask" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SearchLog" Width="1.5" PointX="5.25" PointY="122.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SelectionType" Width="1.5" PointX="16.25" PointY="66" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Setting" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SiteContent" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TaxGroup" Width="1.5" PointX="11" PointY="70.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TaxGroupItem" Width="1.5" PointX="7.5" PointY="49.375" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_Attribute_AttributeType" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Attribute_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Attribute_SelectionType" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_AttributeGroupItem_Attribute" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_AttributeItem_Attribute" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_AttributeGroup_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_AttributeGroupItem_AttributeGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Product_AttributeGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_AttributeItem_SelectionType" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OrderItemAttributeItem_AttributeItem" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_BanquetEnquiry_OccasionType" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_BanquetEnquiry_OutletBanquet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_BanquetImageGallary_OutletBanquet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Category_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ProductCategoryMapping_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Location_City" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ContactUs_ContactSubject" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_MobileBanner_ContentType" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CouponOrderMapping_Coupon" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CouponOutletMapping_Coupon" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CouponOrderMapping_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CouponOrderMapping_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CouponOutletMapping_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OutletCuisineMapping_Cuisine" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Customer_CustomerRole" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CustomerAddress_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CustomerHistory_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CustomerToken_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CustomerVerification_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Order_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_SearchLog_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Log_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CustomerHistory_CustomerActivityCode" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Order_CustomerAddress" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Order_CustomerAddress1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CustomerHistory_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OutletFacilityMapping_Facility" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Outlet_Location" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Order_OrderDeliveryType" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Order_OrderSource" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Order_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OrderHistory_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OrderItem_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OrderTax_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.OrderNote_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OrderHistory_OrderActivityCode" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OrderItemAttributeItem_OrderItem" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OrderTax_TaxGroupItem" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Outlet_TaxGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OutletBanquet_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OutletBanquetPackages_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OutletBuffet_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OutletContact_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OutletCuisineMapping_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OutletDetails_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OutletFacilityMapping_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OutletFixedMeal_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OutletImageGallary_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OutletMedia_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OutletOffer_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OutletOrderTakingTime_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OutletProductExclude_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OutletRating_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Product_Outlet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_OutletProductExclude_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ProductCategoryMapping_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TaxGroupItem_TaxGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CustomerFavouriteOutletMapping" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CustomerOutletMapping" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CustomerRolePermissionMapping" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

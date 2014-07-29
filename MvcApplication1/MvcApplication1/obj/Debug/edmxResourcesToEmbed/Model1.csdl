@@ -1,0 +1,2285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Attributes" EntityType="Model.Attribute" />
+    <EntitySet Name="AttributeGroups" EntityType="Model.AttributeGroup" />
+    <EntitySet Name="AttributeGroupItems" EntityType="Model.AttributeGroupItem" />
+    <EntitySet Name="AttributeItems" EntityType="Model.AttributeItem" />
+    <EntitySet Name="AttributeTypes" EntityType="Model.AttributeType" />
+    <EntitySet Name="BanquetEnquiries" EntityType="Model.BanquetEnquiry" />
+    <EntitySet Name="BanquetImageGallaries" EntityType="Model.BanquetImageGallary" />
+    <EntitySet Name="Categories" EntityType="Model.Category" />
+    <EntitySet Name="Cities" EntityType="Model.City" />
+    <EntitySet Name="ContactSubjects" EntityType="Model.ContactSubject" />
+    <EntitySet Name="ContactUs" EntityType="Model.ContactU" />
+    <EntitySet Name="ContentTypes" EntityType="Model.ContentType" />
+    <EntitySet Name="Coupons" EntityType="Model.Coupon" />
+    <EntitySet Name="CouponOrderMappings" EntityType="Model.CouponOrderMapping" />
+    <EntitySet Name="CouponOutletMappings" EntityType="Model.CouponOutletMapping" />
+    <EntitySet Name="Cuisines" EntityType="Model.Cuisine" />
+    <EntitySet Name="Customers" EntityType="Model.Customer" />
+    <EntitySet Name="CustomerActivityCodes" EntityType="Model.CustomerActivityCode" />
+    <EntitySet Name="CustomerAddresses" EntityType="Model.CustomerAddress" />
+    <EntitySet Name="CustomerHistories" EntityType="Model.CustomerHistory" />
+    <EntitySet Name="CustomerRoles" EntityType="Model.CustomerRole" />
+    <EntitySet Name="CustomerTokens" EntityType="Model.CustomerToken" />
+    <EntitySet Name="CustomerVerifications" EntityType="Model.CustomerVerification" />
+    <EntitySet Name="EmailSubscribers" EntityType="Model.EmailSubscriber" />
+    <EntitySet Name="ErrorLogs" EntityType="Model.ErrorLog" />
+    <EntitySet Name="Facilities" EntityType="Model.Facility" />
+    <EntitySet Name="HomeImageGallaries" EntityType="Model.HomeImageGallary" />
+    <EntitySet Name="ImportMenuTemps" EntityType="Model.ImportMenuTemp" />
+    <EntitySet Name="Locations" EntityType="Model.Location" />
+    <EntitySet Name="Logs" EntityType="Model.Log" />
+    <EntitySet Name="MessageTemplates" EntityType="Model.MessageTemplate" />
+    <EntitySet Name="MobileBanners" EntityType="Model.MobileBanner" />
+    <EntitySet Name="OccasionTypes" EntityType="Model.OccasionType" />
+    <EntitySet Name="Orders" EntityType="Model.Order" />
+    <EntitySet Name="OrderActivityCodes" EntityType="Model.OrderActivityCode" />
+    <EntitySet Name="OrderDeliveryTypes" EntityType="Model.OrderDeliveryType" />
+    <EntitySet Name="OrderHistories" EntityType="Model.OrderHistory" />
+    <EntitySet Name="OrderItems" EntityType="Model.OrderItem" />
+    <EntitySet Name="OrderItemAttributeItems" EntityType="Model.OrderItemAttributeItem" />
+    <EntitySet Name="OrderNotes" EntityType="Model.OrderNote" />
+    <EntitySet Name="OrderSources" EntityType="Model.OrderSource" />
+    <EntitySet Name="OrderStatus" EntityType="Model.OrderStatu" />
+    <EntitySet Name="OrderTaxes" EntityType="Model.OrderTax" />
+    <EntitySet Name="Outlets" EntityType="Model.Outlet" />
+    <EntitySet Name="OutletBanquets" EntityType="Model.OutletBanquet" />
+    <EntitySet Name="OutletBanquetPackages" EntityType="Model.OutletBanquetPackage" />
+    <EntitySet Name="OutletBuffets" EntityType="Model.OutletBuffet" />
+    <EntitySet Name="OutletContacts" EntityType="Model.OutletContact" />
+    <EntitySet Name="OutletCuisineMappings" EntityType="Model.OutletCuisineMapping" />
+    <EntitySet Name="OutletDetails" EntityType="Model.OutletDetail" />
+    <EntitySet Name="OutletFacilityMappings" EntityType="Model.OutletFacilityMapping" />
+    <EntitySet Name="OutletFixedMeals" EntityType="Model.OutletFixedMeal" />
+    <EntitySet Name="OutletImageGallaries" EntityType="Model.OutletImageGallary" />
+    <EntitySet Name="OutletMedias" EntityType="Model.OutletMedia" />
+    <EntitySet Name="OutletOffers" EntityType="Model.OutletOffer" />
+    <EntitySet Name="OutletProductExcludes" EntityType="Model.OutletProductExclude" />
+    <EntitySet Name="OutletRatings" EntityType="Model.OutletRating" />
+    <EntitySet Name="OutletTimings" EntityType="Model.OutletTiming" />
+    <EntitySet Name="Permissions" EntityType="Model.Permission" />
+    <EntitySet Name="Products" EntityType="Model.Product" />
+    <EntitySet Name="ProductCategoryMappings" EntityType="Model.ProductCategoryMapping" />
+    <EntitySet Name="QueuedEmails" EntityType="Model.QueuedEmail" />
+    <EntitySet Name="QueuedSMS" EntityType="Model.QueuedSM" />
+    <EntitySet Name="Resources" EntityType="Model.Resource" />
+    <EntitySet Name="ScheduleTasks" EntityType="Model.ScheduleTask" />
+    <EntitySet Name="SearchLogs" EntityType="Model.SearchLog" />
+    <EntitySet Name="SelectionTypes" EntityType="Model.SelectionType" />
+    <EntitySet Name="Settings" EntityType="Model.Setting" />
+    <EntitySet Name="SiteContents" EntityType="Model.SiteContent" />
+    <EntitySet Name="TaxGroups" EntityType="Model.TaxGroup" />
+    <EntitySet Name="TaxGroupItems" EntityType="Model.TaxGroupItem" />
+    <AssociationSet Name="FK_Attribute_AttributeType" Association="Model.FK_Attribute_AttributeType">
+      <End Role="AttributeType" EntitySet="AttributeTypes" />
+      <End Role="Attribute" EntitySet="Attributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Attribute_Outlet" Association="Model.FK_Attribute_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="Attribute" EntitySet="Attributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Attribute_SelectionType" Association="Model.FK_Attribute_SelectionType">
+      <End Role="SelectionType" EntitySet="SelectionTypes" />
+      <End Role="Attribute" EntitySet="Attributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeGroupItem_Attribute" Association="Model.FK_AttributeGroupItem_Attribute">
+      <End Role="Attribute" EntitySet="Attributes" />
+      <End Role="AttributeGroupItem" EntitySet="AttributeGroupItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeItem_Attribute" Association="Model.FK_AttributeItem_Attribute">
+      <End Role="Attribute" EntitySet="Attributes" />
+      <End Role="AttributeItem" EntitySet="AttributeItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeGroup_Outlet" Association="Model.FK_AttributeGroup_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="AttributeGroup" EntitySet="AttributeGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeGroupItem_AttributeGroup" Association="Model.FK_AttributeGroupItem_AttributeGroup">
+      <End Role="AttributeGroup" EntitySet="AttributeGroups" />
+      <End Role="AttributeGroupItem" EntitySet="AttributeGroupItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_AttributeGroup" Association="Model.FK_Product_AttributeGroup">
+      <End Role="AttributeGroup" EntitySet="AttributeGroups" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeItem_SelectionType" Association="Model.FK_AttributeItem_SelectionType">
+      <End Role="SelectionType" EntitySet="SelectionTypes" />
+      <End Role="AttributeItem" EntitySet="AttributeItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderItemAttributeItem_AttributeItem" Association="Model.FK_OrderItemAttributeItem_AttributeItem">
+      <End Role="AttributeItem" EntitySet="AttributeItems" />
+      <End Role="OrderItemAttributeItem" EntitySet="OrderItemAttributeItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BanquetEnquiry_OccasionType" Association="Model.FK_BanquetEnquiry_OccasionType">
+      <End Role="OccasionType" EntitySet="OccasionTypes" />
+      <End Role="BanquetEnquiry" EntitySet="BanquetEnquiries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BanquetEnquiry_OutletBanquet" Association="Model.FK_BanquetEnquiry_OutletBanquet">
+      <End Role="OutletBanquet" EntitySet="OutletBanquets" />
+      <End Role="BanquetEnquiry" EntitySet="BanquetEnquiries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BanquetImageGallary_OutletBanquet" Association="Model.FK_BanquetImageGallary_OutletBanquet">
+      <End Role="OutletBanquet" EntitySet="OutletBanquets" />
+      <End Role="BanquetImageGallary" EntitySet="BanquetImageGallaries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Category_Outlet" Association="Model.FK_Category_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="Category" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCategoryMapping_Category" Association="Model.FK_ProductCategoryMapping_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="ProductCategoryMapping" EntitySet="ProductCategoryMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Location_City" Association="Model.FK_Location_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactUs_ContactSubject" Association="Model.FK_ContactUs_ContactSubject">
+      <End Role="ContactSubject" EntitySet="ContactSubjects" />
+      <End Role="ContactUs" EntitySet="ContactUs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MobileBanner_ContentType" Association="Model.FK_MobileBanner_ContentType">
+      <End Role="ContentType" EntitySet="ContentTypes" />
+      <End Role="MobileBanner" EntitySet="MobileBanners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CouponOrderMapping_Coupon" Association="Model.FK_CouponOrderMapping_Coupon">
+      <End Role="Coupon" EntitySet="Coupons" />
+      <End Role="CouponOrderMapping" EntitySet="CouponOrderMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CouponOutletMapping_Coupon" Association="Model.FK_CouponOutletMapping_Coupon">
+      <End Role="Coupon" EntitySet="Coupons" />
+      <End Role="CouponOutletMapping" EntitySet="CouponOutletMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CouponOrderMapping_Customer" Association="Model.FK_CouponOrderMapping_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CouponOrderMapping" EntitySet="CouponOrderMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CouponOrderMapping_Order" Association="Model.FK_CouponOrderMapping_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="CouponOrderMapping" EntitySet="CouponOrderMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CouponOutletMapping_Outlet" Association="Model.FK_CouponOutletMapping_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="CouponOutletMapping" EntitySet="CouponOutletMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutletCuisineMapping_Cuisine" Association="Model.FK_OutletCuisineMapping_Cuisine">
+      <End Role="Cuisine" EntitySet="Cuisines" />
+      <End Role="OutletCuisineMapping" EntitySet="OutletCuisineMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_CustomerRole" Association="Model.FK_Customer_CustomerRole">
+      <End Role="CustomerRole" EntitySet="CustomerRoles" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerAddress_Customer" Association="Model.FK_CustomerAddress_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerAddress" EntitySet="CustomerAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerHistory_Customer" Association="Model.FK_CustomerHistory_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerHistory" EntitySet="CustomerHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerToken_Customer" Association="Model.FK_CustomerToken_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerToken" EntitySet="CustomerTokens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerVerification_Customer" Association="Model.FK_CustomerVerification_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerVerification" EntitySet="CustomerVerifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Customer" Association="Model.FK_Order_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SearchLog_Customer" Association="Model.FK_SearchLog_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="SearchLog" EntitySet="SearchLogs" />
+    </AssociationSet>
+    <AssociationSet Name="Log_Customer" Association="Model.Log_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Log" EntitySet="Logs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerHistory_CustomerActivityCode" Association="Model.FK_CustomerHistory_CustomerActivityCode">
+      <End Role="CustomerActivityCode" EntitySet="CustomerActivityCodes" />
+      <End Role="CustomerHistory" EntitySet="CustomerHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_CustomerAddress" Association="Model.FK_Order_CustomerAddress">
+      <End Role="CustomerAddress" EntitySet="CustomerAddresses" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_CustomerAddress1" Association="Model.FK_Order_CustomerAddress1">
+      <End Role="CustomerAddress" EntitySet="CustomerAddresses" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerHistory_Outlet" Association="Model.FK_CustomerHistory_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="CustomerHistory" EntitySet="CustomerHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutletFacilityMapping_Facility" Association="Model.FK_OutletFacilityMapping_Facility">
+      <End Role="Facility" EntitySet="Facilities" />
+      <End Role="OutletFacilityMapping" EntitySet="OutletFacilityMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Outlet_Location" Association="Model.FK_Outlet_Location">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="Outlet" EntitySet="Outlets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_OrderDeliveryType" Association="Model.FK_Order_OrderDeliveryType">
+      <End Role="OrderDeliveryType" EntitySet="OrderDeliveryTypes" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_OrderSource" Association="Model.FK_Order_OrderSource">
+      <End Role="OrderSource" EntitySet="OrderSources" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Outlet" Association="Model.FK_Order_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderHistory_Order" Association="Model.FK_OrderHistory_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderHistory" EntitySet="OrderHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderItem_Order" Association="Model.FK_OrderItem_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderItem" EntitySet="OrderItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderTax_Order" Association="Model.FK_OrderTax_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderTax" EntitySet="OrderTaxes" />
+    </AssociationSet>
+    <AssociationSet Name="OrderNote_Order" Association="Model.OrderNote_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderNote" EntitySet="OrderNotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderHistory_OrderActivityCode" Association="Model.FK_OrderHistory_OrderActivityCode">
+      <End Role="OrderActivityCode" EntitySet="OrderActivityCodes" />
+      <End Role="OrderHistory" EntitySet="OrderHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderItemAttributeItem_OrderItem" Association="Model.FK_OrderItemAttributeItem_OrderItem">
+      <End Role="OrderItem" EntitySet="OrderItems" />
+      <End Role="OrderItemAttributeItem" EntitySet="OrderItemAttributeItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderTax_TaxGroupItem" Association="Model.FK_OrderTax_TaxGroupItem">
+      <End Role="TaxGroupItem" EntitySet="TaxGroupItems" />
+      <End Role="OrderTax" EntitySet="OrderTaxes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Outlet_TaxGroup" Association="Model.FK_Outlet_TaxGroup">
+      <End Role="TaxGroup" EntitySet="TaxGroups" />
+      <End Role="Outlet" EntitySet="Outlets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutletBanquet_Outlet" Association="Model.FK_OutletBanquet_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="OutletBanquet" EntitySet="OutletBanquets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutletBanquetPackages_Outlet" Association="Model.FK_OutletBanquetPackages_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="OutletBanquetPackages" EntitySet="OutletBanquetPackages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutletBuffet_Outlet" Association="Model.FK_OutletBuffet_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="OutletBuffet" EntitySet="OutletBuffets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutletContact_Outlet" Association="Model.FK_OutletContact_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="OutletContact" EntitySet="OutletContacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutletCuisineMapping_Outlet" Association="Model.FK_OutletCuisineMapping_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="OutletCuisineMapping" EntitySet="OutletCuisineMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutletDetails_Outlet" Association="Model.FK_OutletDetails_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="OutletDetail" EntitySet="OutletDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutletFacilityMapping_Outlet" Association="Model.FK_OutletFacilityMapping_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="OutletFacilityMapping" EntitySet="OutletFacilityMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutletFixedMeal_Outlet" Association="Model.FK_OutletFixedMeal_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="OutletFixedMeal" EntitySet="OutletFixedMeals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutletImageGallary_Outlet" Association="Model.FK_OutletImageGallary_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="OutletImageGallary" EntitySet="OutletImageGallaries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutletMedia_Outlet" Association="Model.FK_OutletMedia_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="OutletMedia" EntitySet="OutletMedias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutletOffer_Outlet" Association="Model.FK_OutletOffer_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="OutletOffer" EntitySet="OutletOffers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutletOrderTakingTime_Outlet" Association="Model.FK_OutletOrderTakingTime_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="OutletTiming" EntitySet="OutletTimings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutletProductExclude_Outlet" Association="Model.FK_OutletProductExclude_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="OutletProductExclude" EntitySet="OutletProductExcludes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutletRating_Outlet" Association="Model.FK_OutletRating_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="OutletRating" EntitySet="OutletRatings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Outlet" Association="Model.FK_Product_Outlet">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutletProductExclude_Product" Association="Model.FK_OutletProductExclude_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="OutletProductExclude" EntitySet="OutletProductExcludes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCategoryMapping_Product" Association="Model.FK_ProductCategoryMapping_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductCategoryMapping" EntitySet="ProductCategoryMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaxGroupItem_TaxGroup" Association="Model.FK_TaxGroupItem_TaxGroup">
+      <End Role="TaxGroup" EntitySet="TaxGroups" />
+      <End Role="TaxGroupItem" EntitySet="TaxGroupItems" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerFavouriteOutletMapping" Association="Model.CustomerFavouriteOutletMapping">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Outlet" EntitySet="Outlets" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerOutletMapping" Association="Model.CustomerOutletMapping">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Outlet" EntitySet="Outlets" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerRolePermissionMapping" Association="Model.CustomerRolePermissionMapping">
+      <End Role="CustomerRole" EntitySet="CustomerRoles" />
+      <End Role="Permission" EntitySet="Permissions" />
+    </AssociationSet>
+    <FunctionImport Name="GetOutletCategoryTree" ReturnType="Collection(Model.GetOutletCategoryTree_Result)" IsComposable="true">
+      <Parameter Name="OutletId" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetNearByOutlet" ReturnType="Collection(Model.GetNearByOutlet_Result)">
+      <Parameter Name="Latitude" Mode="In" Type="Double" />
+      <Parameter Name="Longitude" Mode="In" Type="Double" />
+      <Parameter Name="MapCenterLatitude" Mode="In" Type="Double" />
+      <Parameter Name="MapCenterLongitude" Mode="In" Type="Double" />
+      <Parameter Name="Radius" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="ImportMenuItems">
+      <Parameter Name="RESTAURANTID" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GetOutletCategoryTree_Result">
+    <Property Name="Category" Type="String" MaxLength="513" Unicode="true" FixedLength="false" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="Level1Category" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Level2Category" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Level1CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="Level2CategoryId" Type="Int32" />
+  </ComplexType>
+  <EntityType Name="Attribute">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="SelectionTypeId" Type="Int32" Nullable="false" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="AttributeTypeId" Type="Byte" />
+    <Property Name="Published" Type="Boolean" Nullable="false" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="AttributeType" Relationship="Model.FK_Attribute_AttributeType" FromRole="Attribute" ToRole="AttributeType" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_Attribute_Outlet" FromRole="Attribute" ToRole="Outlet" />
+    <NavigationProperty Name="SelectionType" Relationship="Model.FK_Attribute_SelectionType" FromRole="Attribute" ToRole="SelectionType" />
+    <NavigationProperty Name="AttributeGroupItems" Relationship="Model.FK_AttributeGroupItem_Attribute" FromRole="Attribute" ToRole="AttributeGroupItem" />
+    <NavigationProperty Name="AttributeItems" Relationship="Model.FK_AttributeItem_Attribute" FromRole="Attribute" ToRole="AttributeItem" />
+  </EntityType>
+  <EntityType Name="AttributeGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_AttributeGroup_Outlet" FromRole="AttributeGroup" ToRole="Outlet" />
+    <NavigationProperty Name="AttributeGroupItems" Relationship="Model.FK_AttributeGroupItem_AttributeGroup" FromRole="AttributeGroup" ToRole="AttributeGroupItem" />
+    <NavigationProperty Name="Products" Relationship="Model.FK_Product_AttributeGroup" FromRole="AttributeGroup" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="AttributeGroupItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="AttributeGroupId" Type="Int32" Nullable="false" />
+    <Property Name="AttributeId" Type="Int32" Nullable="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Attribute" Relationship="Model.FK_AttributeGroupItem_Attribute" FromRole="AttributeGroupItem" ToRole="Attribute" />
+    <NavigationProperty Name="AttributeGroup" Relationship="Model.FK_AttributeGroupItem_AttributeGroup" FromRole="AttributeGroupItem" ToRole="AttributeGroup" />
+  </EntityType>
+  <EntityType Name="AttributeItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="AttributeId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="DefaultSelected" Type="Boolean" Nullable="false" />
+    <Property Name="SelectionTypeId" Type="Int32" />
+    <Property Name="DefaultSelectionTypeValue" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Published" Type="Boolean" Nullable="false" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Attribute" Relationship="Model.FK_AttributeItem_Attribute" FromRole="AttributeItem" ToRole="Attribute" />
+    <NavigationProperty Name="SelectionType" Relationship="Model.FK_AttributeItem_SelectionType" FromRole="AttributeItem" ToRole="SelectionType" />
+    <NavigationProperty Name="OrderItemAttributeItems" Relationship="Model.FK_OrderItemAttributeItem_AttributeItem" FromRole="AttributeItem" ToRole="OrderItemAttributeItem" />
+  </EntityType>
+  <EntityType Name="AttributeType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Attributes" Relationship="Model.FK_Attribute_AttributeType" FromRole="AttributeType" ToRole="Attribute" />
+  </EntityType>
+  <EntityType Name="BanquetEnquiry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="MobileNumber" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="EmailId" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OccasionDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OccassionTypeId" Type="Int32" Nullable="false" />
+    <Property Name="NoOfPerson" Type="Int32" Nullable="false" />
+    <Property Name="BanquetId" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
+    <NavigationProperty Name="OccasionType" Relationship="Model.FK_BanquetEnquiry_OccasionType" FromRole="BanquetEnquiry" ToRole="OccasionType" />
+    <NavigationProperty Name="OutletBanquet" Relationship="Model.FK_BanquetEnquiry_OutletBanquet" FromRole="BanquetEnquiry" ToRole="OutletBanquet" />
+  </EntityType>
+  <EntityType Name="BanquetImageGallary">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ThumbName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="FullImageName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="OutletBanquetId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="OutletBanquet" Relationship="Model.FK_BanquetImageGallary_OutletBanquet" FromRole="BanquetImageGallary" ToRole="OutletBanquet" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="Type" Type="Byte" Nullable="false" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="Published" Type="Boolean" Nullable="false" />
+    <Property Name="OldId" Type="Int32" />
+    <Property Name="OldParentId" Type="Int32" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_Category_Outlet" FromRole="Category" ToRole="Outlet" />
+    <NavigationProperty Name="ProductCategoryMappings" Relationship="Model.FK_ProductCategoryMapping_Category" FromRole="Category" ToRole="ProductCategoryMapping" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="Published" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Locations" Relationship="Model.FK_Location_City" FromRole="City" ToRole="Location" />
+  </EntityType>
+  <EntityType Name="ContactSubject">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="ContactUs" Relationship="Model.FK_ContactUs_ContactSubject" FromRole="ContactSubject" ToRole="ContactUs" />
+  </EntityType>
+  <EntityType Name="ContactU">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ContactSubjectId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="OutletName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="ContactSubject" Relationship="Model.FK_ContactUs_ContactSubject" FromRole="ContactUs" ToRole="ContactSubject" />
+  </EntityType>
+  <EntityType Name="ContentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="MobileBanners" Relationship="Model.FK_MobileBanner_ContentType" FromRole="ContentType" ToRole="MobileBanner" />
+  </EntityType>
+  <EntityType Name="Coupon">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="ValidityStartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ValidityEndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TotalAvailableCoupons" Type="Int32" Nullable="false" />
+    <Property Name="TotalUsedCoupons" Type="Int32" Nullable="false" />
+    <Property Name="PerCustomerCoupon" Type="Int32" Nullable="false" />
+    <Property Name="CouponType" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <Property Name="MinAllowedOrderAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="IsApplicableForAllOutlet" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="CouponOrderMappings" Relationship="Model.FK_CouponOrderMapping_Coupon" FromRole="Coupon" ToRole="CouponOrderMapping" />
+    <NavigationProperty Name="CouponOutletMappings" Relationship="Model.FK_CouponOutletMapping_Coupon" FromRole="Coupon" ToRole="CouponOutletMapping" />
+  </EntityType>
+  <EntityType Name="CouponOrderMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CouponId" Type="Int32" Nullable="false" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Coupon" Relationship="Model.FK_CouponOrderMapping_Coupon" FromRole="CouponOrderMapping" ToRole="Coupon" />
+    <NavigationProperty Name="Customer" Relationship="Model.FK_CouponOrderMapping_Customer" FromRole="CouponOrderMapping" ToRole="Customer" />
+    <NavigationProperty Name="Order" Relationship="Model.FK_CouponOrderMapping_Order" FromRole="CouponOrderMapping" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="CouponOutletMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CouponId" Type="Int32" Nullable="false" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Coupon" Relationship="Model.FK_CouponOutletMapping_Coupon" FromRole="CouponOutletMapping" ToRole="Coupon" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_CouponOutletMapping_Outlet" FromRole="CouponOutletMapping" ToRole="Outlet" />
+  </EntityType>
+  <EntityType Name="Cuisine">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="OutletCuisineMappings" Relationship="Model.FK_OutletCuisineMapping_Cuisine" FromRole="Cuisine" ToRole="OutletCuisineMapping" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="MobileNumber" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="EmailVerified" Type="Boolean" Nullable="false" />
+    <Property Name="MobileVerified" Type="Boolean" Nullable="false" />
+    <Property Name="FacebookId" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="GoogleId" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+    <Property Name="BillingAddressId" Type="Int32" />
+    <Property Name="ShippingAddressId" Type="Int32" />
+    <Property Name="PasswordSalt" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CustomerRoleId" Type="Int32" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CouponOrderMappings" Relationship="Model.FK_CouponOrderMapping_Customer" FromRole="Customer" ToRole="CouponOrderMapping" />
+    <NavigationProperty Name="CustomerRole" Relationship="Model.FK_Customer_CustomerRole" FromRole="Customer" ToRole="CustomerRole" />
+    <NavigationProperty Name="CustomerAddresses" Relationship="Model.FK_CustomerAddress_Customer" FromRole="Customer" ToRole="CustomerAddress" />
+    <NavigationProperty Name="CustomerHistories" Relationship="Model.FK_CustomerHistory_Customer" FromRole="Customer" ToRole="CustomerHistory" />
+    <NavigationProperty Name="CustomerTokens" Relationship="Model.FK_CustomerToken_Customer" FromRole="Customer" ToRole="CustomerToken" />
+    <NavigationProperty Name="CustomerVerifications" Relationship="Model.FK_CustomerVerification_Customer" FromRole="Customer" ToRole="CustomerVerification" />
+    <NavigationProperty Name="Orders" Relationship="Model.FK_Order_Customer" FromRole="Customer" ToRole="Order" />
+    <NavigationProperty Name="SearchLogs" Relationship="Model.FK_SearchLog_Customer" FromRole="Customer" ToRole="SearchLog" />
+    <NavigationProperty Name="Logs" Relationship="Model.Log_Customer" FromRole="Customer" ToRole="Log" />
+    <NavigationProperty Name="Outlets" Relationship="Model.CustomerFavouriteOutletMapping" FromRole="Customer" ToRole="Outlet" />
+    <NavigationProperty Name="Outlets1" Relationship="Model.CustomerOutletMapping" FromRole="Customer" ToRole="Outlet" />
+  </EntityType>
+  <EntityType Name="CustomerActivityCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CustomerHistories" Relationship="Model.FK_CustomerHistory_CustomerActivityCode" FromRole="CustomerActivityCode" ToRole="CustomerHistory" />
+  </EntityType>
+  <EntityType Name="CustomerAddress">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="AddressTitle" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Address1" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Address2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Landmark" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Location" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="PostalCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Company" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Customer" Relationship="Model.FK_CustomerAddress_Customer" FromRole="CustomerAddress" ToRole="Customer" />
+    <NavigationProperty Name="Orders" Relationship="Model.FK_Order_CustomerAddress" FromRole="CustomerAddress" ToRole="Order" />
+    <NavigationProperty Name="Orders1" Relationship="Model.FK_Order_CustomerAddress1" FromRole="CustomerAddress" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="CustomerHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="ActivityId" Type="Int32" Nullable="false" />
+    <Property Name="OutletId" Type="Int32" />
+    <Property Name="Notes" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="IpAddress" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Customer" Relationship="Model.FK_CustomerHistory_Customer" FromRole="CustomerHistory" ToRole="Customer" />
+    <NavigationProperty Name="CustomerActivityCode" Relationship="Model.FK_CustomerHistory_CustomerActivityCode" FromRole="CustomerHistory" ToRole="CustomerActivityCode" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_CustomerHistory_Outlet" FromRole="CustomerHistory" ToRole="Outlet" />
+  </EntityType>
+  <EntityType Name="CustomerRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="SystemName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Customers" Relationship="Model.FK_Customer_CustomerRole" FromRole="CustomerRole" ToRole="Customer" />
+    <NavigationProperty Name="Permissions" Relationship="Model.CustomerRolePermissionMapping" FromRole="CustomerRole" ToRole="Permission" />
+  </EntityType>
+  <EntityType Name="CustomerToken">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="Token" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ExpiresOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AccessOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Customer" Relationship="Model.FK_CustomerToken_Customer" FromRole="CustomerToken" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="CustomerVerification">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Customer" Relationship="Model.FK_CustomerVerification_Customer" FromRole="CustomerVerification" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="EmailSubscriber">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="IpAddress" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ErrorLog">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="Thread" />
+      <PropertyRef Name="Level" />
+      <PropertyRef Name="Logger" />
+      <PropertyRef Name="Message" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Thread" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Level" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Logger" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Message" Type="String" Nullable="false" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="Exception" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Facility">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="OutletFacilityMappings" Relationship="Model.FK_OutletFacilityMapping_Facility" FromRole="Facility" ToRole="OutletFacilityMapping" />
+  </EntityType>
+  <EntityType Name="HomeImageGallary">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Platform" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ImportMenuTemp">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Category1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Category2" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Item" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DisplayName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Price" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Variety1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Variety1Price" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Variety2" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Variety2Price" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Variety3" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Variety3Price" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Variety4" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Variety4Price" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Lunch" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="Dinner" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="VarietyID1" Type="Int32" />
+    <Property Name="VarietyID2" Type="Int32" />
+    <Property Name="VarietyID3" Type="Int32" />
+    <Property Name="VarietyID4" Type="Int32" />
+    <Property Name="IsNonVeg" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="Latitude" Type="Double" />
+    <Property Name="Longitude" Type="Double" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="Model.FK_Location_City" FromRole="Location" ToRole="City" />
+    <NavigationProperty Name="Outlets" Relationship="Model.FK_Outlet_Location" FromRole="Location" ToRole="Outlet" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="LogLevelId" Type="Int32" Nullable="false" />
+    <Property Name="ShortMessage" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="FullMessage" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="IpAddress" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="CustomerId" Type="Int32" />
+    <Property Name="PageUrl" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ReferrerUrl" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOnUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Customer" Relationship="Model.Log_Customer" FromRole="Log" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="MessageTemplate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Subject" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="Body" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MobileBanner">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" Nullable="false" MaxLength="225" Unicode="true" FixedLength="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ContentTypeId" Type="Int32" Nullable="false" />
+    <Property Name="ContentTypeValue" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="ContentType" Relationship="Model.FK_MobileBanner_ContentType" FromRole="MobileBanner" ToRole="ContentType" />
+  </EntityType>
+  <EntityType Name="OccasionType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="BanquetEnquiries" Relationship="Model.FK_BanquetEnquiry_OccasionType" FromRole="OccasionType" ToRole="BanquetEnquiry" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="OrderStatusId" Type="Int32" Nullable="false" />
+    <Property Name="ShippingAddressId" Type="Int32" />
+    <Property Name="BillingAddressId" Type="Int32" />
+    <Property Name="OrderDeliveryTypeId" Type="Int32" Nullable="false" />
+    <Property Name="SubTotal" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="ShippingTotal" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="DiscountTotal" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="OrderTotal" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="CouponCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Comment" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+    <Property Name="OrderSourceId" Type="Int32" />
+    <Property Name="DeliveryDateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CouponOrderMappings" Relationship="Model.FK_CouponOrderMapping_Order" FromRole="Order" ToRole="CouponOrderMapping" />
+    <NavigationProperty Name="Customer" Relationship="Model.FK_Order_Customer" FromRole="Order" ToRole="Customer" />
+    <NavigationProperty Name="CustomerAddress" Relationship="Model.FK_Order_CustomerAddress" FromRole="Order" ToRole="CustomerAddress" />
+    <NavigationProperty Name="CustomerAddress1" Relationship="Model.FK_Order_CustomerAddress1" FromRole="Order" ToRole="CustomerAddress" />
+    <NavigationProperty Name="OrderDeliveryType" Relationship="Model.FK_Order_OrderDeliveryType" FromRole="Order" ToRole="OrderDeliveryType" />
+    <NavigationProperty Name="OrderSource" Relationship="Model.FK_Order_OrderSource" FromRole="Order" ToRole="OrderSource" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_Order_Outlet" FromRole="Order" ToRole="Outlet" />
+    <NavigationProperty Name="OrderHistories" Relationship="Model.FK_OrderHistory_Order" FromRole="Order" ToRole="OrderHistory" />
+    <NavigationProperty Name="OrderItems" Relationship="Model.FK_OrderItem_Order" FromRole="Order" ToRole="OrderItem" />
+    <NavigationProperty Name="OrderTaxes" Relationship="Model.FK_OrderTax_Order" FromRole="Order" ToRole="OrderTax" />
+    <NavigationProperty Name="OrderNotes" Relationship="Model.OrderNote_Order" FromRole="Order" ToRole="OrderNote" />
+  </EntityType>
+  <EntityType Name="OrderActivityCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="OrderHistories" Relationship="Model.FK_OrderHistory_OrderActivityCode" FromRole="OrderActivityCode" ToRole="OrderHistory" />
+  </EntityType>
+  <EntityType Name="OrderDeliveryType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Orders" Relationship="Model.FK_Order_OrderDeliveryType" FromRole="OrderDeliveryType" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="OrderHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="ActivityId" Type="Int32" Nullable="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="IpAddress" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Order" Relationship="Model.FK_OrderHistory_Order" FromRole="OrderHistory" ToRole="Order" />
+    <NavigationProperty Name="OrderActivityCode" Relationship="Model.FK_OrderHistory_OrderActivityCode" FromRole="OrderHistory" ToRole="OrderActivityCode" />
+  </EntityType>
+  <EntityType Name="OrderItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="ItemPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="ItemDeliveryTypeId" Type="Int32" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <NavigationProperty Name="Order" Relationship="Model.FK_OrderItem_Order" FromRole="OrderItem" ToRole="Order" />
+    <NavigationProperty Name="OrderItemAttributeItems" Relationship="Model.FK_OrderItemAttributeItem_OrderItem" FromRole="OrderItem" ToRole="OrderItemAttributeItem" />
+  </EntityType>
+  <EntityType Name="OrderItemAttributeItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderItemId" Type="Int32" Nullable="false" />
+    <Property Name="AttributeItemId" Type="Int32" Nullable="false" />
+    <Property Name="SelectionValue" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AttributeItemPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <NavigationProperty Name="AttributeItem" Relationship="Model.FK_OrderItemAttributeItem_AttributeItem" FromRole="OrderItemAttributeItem" ToRole="AttributeItem" />
+    <NavigationProperty Name="OrderItem" Relationship="Model.FK_OrderItemAttributeItem_OrderItem" FromRole="OrderItemAttributeItem" ToRole="OrderItem" />
+  </EntityType>
+  <EntityType Name="OrderNote">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="DisplayToCustomer" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Order" Relationship="Model.OrderNote_Order" FromRole="OrderNote" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="OrderSource">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Orders" Relationship="Model.FK_Order_OrderSource" FromRole="OrderSource" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="OrderStatu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="OrderTax">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="TaxGroupItemId" Type="Int32" Nullable="false" />
+    <Property Name="TaxName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="CalculateOrder" Type="Int32" Nullable="false" />
+    <Property Name="TaxType" Type="Int32" Nullable="false" />
+    <Property Name="Rate" Type="Decimal" Nullable="false" Precision="8" Scale="2" />
+    <Property Name="CalculateOn" Type="Int32" />
+    <Property Name="TaxAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Model.FK_OrderTax_Order" FromRole="OrderTax" ToRole="Order" />
+    <NavigationProperty Name="TaxGroupItem" Relationship="Model.FK_OrderTax_TaxGroupItem" FromRole="OrderTax" ToRole="TaxGroupItem" />
+  </EntityType>
+  <EntityType Name="Outlet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="SeoName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ShortCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LocationId" Type="Int32" Nullable="false" />
+    <Property Name="Phone1" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Phone2" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="IsVeg" Type="Boolean" Nullable="false" />
+    <Property Name="IsNonVeg" Type="Boolean" Nullable="false" />
+    <Property Name="IsAlaCarte" Type="Boolean" Nullable="false" />
+    <Property Name="IsBuffet" Type="Boolean" Nullable="false" />
+    <Property Name="IsFixedMeal" Type="Boolean" Nullable="false" />
+    <Property Name="IsTableBooking" Type="Boolean" Nullable="false" />
+    <Property Name="IsOnlineOrder" Type="Boolean" Nullable="false" />
+    <Property Name="IsTakeAway" Type="Boolean" Nullable="false" />
+    <Property Name="TakeAwayTime" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TakeAwayCondition" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IsHomeDelivery" Type="Boolean" Nullable="false" />
+    <Property Name="HomeDeliveryAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="HomeDeliveryDistance" Type="Int32" />
+    <Property Name="HomeDeliveryTime" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="HomeDeliveryCharge" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="HomeDeliveryCondition" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Rating" Type="Decimal" Precision="2" Scale="1" />
+    <Property Name="Logo" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Published" Type="Boolean" Nullable="false" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TaxGroupId" Type="Int32" />
+    <Property Name="Banner" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Attributes" Relationship="Model.FK_Attribute_Outlet" FromRole="Outlet" ToRole="Attribute" />
+    <NavigationProperty Name="AttributeGroups" Relationship="Model.FK_AttributeGroup_Outlet" FromRole="Outlet" ToRole="AttributeGroup" />
+    <NavigationProperty Name="Categories" Relationship="Model.FK_Category_Outlet" FromRole="Outlet" ToRole="Category" />
+    <NavigationProperty Name="CouponOutletMappings" Relationship="Model.FK_CouponOutletMapping_Outlet" FromRole="Outlet" ToRole="CouponOutletMapping" />
+    <NavigationProperty Name="CustomerHistories" Relationship="Model.FK_CustomerHistory_Outlet" FromRole="Outlet" ToRole="CustomerHistory" />
+    <NavigationProperty Name="Location" Relationship="Model.FK_Outlet_Location" FromRole="Outlet" ToRole="Location" />
+    <NavigationProperty Name="Orders" Relationship="Model.FK_Order_Outlet" FromRole="Outlet" ToRole="Order" />
+    <NavigationProperty Name="TaxGroup" Relationship="Model.FK_Outlet_TaxGroup" FromRole="Outlet" ToRole="TaxGroup" />
+    <NavigationProperty Name="OutletBanquets" Relationship="Model.FK_OutletBanquet_Outlet" FromRole="Outlet" ToRole="OutletBanquet" />
+    <NavigationProperty Name="OutletBanquetPackages" Relationship="Model.FK_OutletBanquetPackages_Outlet" FromRole="Outlet" ToRole="OutletBanquetPackages" />
+    <NavigationProperty Name="OutletBuffets" Relationship="Model.FK_OutletBuffet_Outlet" FromRole="Outlet" ToRole="OutletBuffet" />
+    <NavigationProperty Name="OutletContacts" Relationship="Model.FK_OutletContact_Outlet" FromRole="Outlet" ToRole="OutletContact" />
+    <NavigationProperty Name="OutletCuisineMappings" Relationship="Model.FK_OutletCuisineMapping_Outlet" FromRole="Outlet" ToRole="OutletCuisineMapping" />
+    <NavigationProperty Name="OutletDetails" Relationship="Model.FK_OutletDetails_Outlet" FromRole="Outlet" ToRole="OutletDetail" />
+    <NavigationProperty Name="OutletFacilityMappings" Relationship="Model.FK_OutletFacilityMapping_Outlet" FromRole="Outlet" ToRole="OutletFacilityMapping" />
+    <NavigationProperty Name="OutletFixedMeals" Relationship="Model.FK_OutletFixedMeal_Outlet" FromRole="Outlet" ToRole="OutletFixedMeal" />
+    <NavigationProperty Name="OutletImageGallaries" Relationship="Model.FK_OutletImageGallary_Outlet" FromRole="Outlet" ToRole="OutletImageGallary" />
+    <NavigationProperty Name="OutletMedias" Relationship="Model.FK_OutletMedia_Outlet" FromRole="Outlet" ToRole="OutletMedia" />
+    <NavigationProperty Name="OutletOffers" Relationship="Model.FK_OutletOffer_Outlet" FromRole="Outlet" ToRole="OutletOffer" />
+    <NavigationProperty Name="OutletTimings" Relationship="Model.FK_OutletOrderTakingTime_Outlet" FromRole="Outlet" ToRole="OutletTiming" />
+    <NavigationProperty Name="OutletProductExcludes" Relationship="Model.FK_OutletProductExclude_Outlet" FromRole="Outlet" ToRole="OutletProductExclude" />
+    <NavigationProperty Name="OutletRatings" Relationship="Model.FK_OutletRating_Outlet" FromRole="Outlet" ToRole="OutletRating" />
+    <NavigationProperty Name="Products" Relationship="Model.FK_Product_Outlet" FromRole="Outlet" ToRole="Product" />
+    <NavigationProperty Name="Customers" Relationship="Model.CustomerFavouriteOutletMapping" FromRole="Outlet" ToRole="Customer" />
+    <NavigationProperty Name="Customers1" Relationship="Model.CustomerOutletMapping" FromRole="Outlet" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="OutletBanquet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="MinimumCapacity" Type="Int32" />
+    <Property Name="MaximumCapacity" Type="Int32" />
+    <Property Name="IsProjectorOrDisplayScreen" Type="Boolean" Nullable="false" />
+    <Property Name="IsMusicSystem" Type="Boolean" Nullable="false" />
+    <Property Name="IsAirConditioner" Type="Boolean" Nullable="false" />
+    <Property Name="IsDecoration" Type="Boolean" Nullable="false" />
+    <Property Name="IsMic" Type="Boolean" Nullable="false" />
+    <Property Name="IsSpeechDesk" Type="Boolean" Nullable="false" />
+    <Property Name="IsInternetOrWifi" Type="Boolean" Nullable="false" />
+    <Property Name="IsStage" Type="Boolean" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="BanquetEnquiries" Relationship="Model.FK_BanquetEnquiry_OutletBanquet" FromRole="OutletBanquet" ToRole="BanquetEnquiry" />
+    <NavigationProperty Name="BanquetImageGallaries" Relationship="Model.FK_BanquetImageGallary_OutletBanquet" FromRole="OutletBanquet" ToRole="BanquetImageGallary" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_OutletBanquet_Outlet" FromRole="OutletBanquet" ToRole="Outlet" />
+  </EntityType>
+  <EntityType Name="OutletBanquetPackage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="8" Scale="2" />
+    <Property Name="Notes" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_OutletBanquetPackages_Outlet" FromRole="OutletBanquetPackages" ToRole="Outlet" />
+  </EntityType>
+  <EntityType Name="OutletBuffet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="DineType" Type="Int32" Nullable="false" />
+    <Property Name="SpecificDate" Type="DateTime" Precision="0" />
+    <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="Weekday" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="NonVegPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Note" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_OutletBuffet_Outlet" FromRole="OutletBuffet" ToRole="Outlet" />
+  </EntityType>
+  <EntityType Name="OutletContact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="ContactName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ContactPhone" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="ContactEmail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Email1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Email2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Pincode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Latitude" Type="Double" />
+    <Property Name="Longitude" Type="Double" />
+    <Property Name="SmsReceiver" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="EmailReceiver" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_OutletContact_Outlet" FromRole="OutletContact" ToRole="Outlet" />
+  </EntityType>
+  <EntityType Name="OutletCuisineMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="CuisineId" Type="Int32" Nullable="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cuisine" Relationship="Model.FK_OutletCuisineMapping_Cuisine" FromRole="OutletCuisineMapping" ToRole="Cuisine" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_OutletCuisineMapping_Outlet" FromRole="OutletCuisineMapping" ToRole="Outlet" />
+  </EntityType>
+  <EntityType Name="OutletDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="MetaTitle" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="MetaDescription" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="MetaKeywords" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="SearchKeywords" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="MenuLastUpdated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_OutletDetails_Outlet" FromRole="OutletDetail" ToRole="Outlet" />
+  </EntityType>
+  <EntityType Name="OutletFacilityMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="FacilityId" Type="Int32" Nullable="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Facility" Relationship="Model.FK_OutletFacilityMapping_Facility" FromRole="OutletFacilityMapping" ToRole="Facility" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_OutletFacilityMapping_Outlet" FromRole="OutletFacilityMapping" ToRole="Outlet" />
+  </EntityType>
+  <EntityType Name="OutletFixedMeal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="SpecificDate" Type="DateTime" Precision="0" />
+    <Property Name="Weekday" Type="Int32" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Note" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_OutletFixedMeal_Outlet" FromRole="OutletFixedMeal" ToRole="Outlet" />
+  </EntityType>
+  <EntityType Name="OutletImageGallary">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ThumbName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="FullImageName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_OutletImageGallary_Outlet" FromRole="OutletImageGallary" ToRole="Outlet" />
+  </EntityType>
+  <EntityType Name="OutletMedia">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="MediaType" Type="Int32" Nullable="false" />
+    <Property Name="FileName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_OutletMedia_Outlet" FromRole="OutletMedia" ToRole="Outlet" />
+  </EntityType>
+  <EntityType Name="OutletOffer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OfferType" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PriceType" Type="Int32" Nullable="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_OutletOffer_Outlet" FromRole="OutletOffer" ToRole="Outlet" />
+  </EntityType>
+  <EntityType Name="OutletProductExclude">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_OutletProductExclude_Outlet" FromRole="OutletProductExclude" ToRole="Outlet" />
+    <NavigationProperty Name="Product" Relationship="Model.FK_OutletProductExclude_Product" FromRole="OutletProductExclude" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="OutletRating">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="Rating" Type="Decimal" Nullable="false" Precision="2" Scale="1" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_OutletRating_Outlet" FromRole="OutletRating" ToRole="Outlet" />
+  </EntityType>
+  <EntityType Name="OutletTiming">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="SpecificDate" Type="DateTime" Precision="0" />
+    <Property Name="Weekday" Type="Int32" />
+    <Property Name="StartTime" Type="Time" Precision="7" />
+    <Property Name="EndTime" Type="Time" Precision="7" />
+    <Property Name="IsOnlineOrder" Type="Boolean" Nullable="false" />
+    <Property Name="TimeType" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_OutletOrderTakingTime_Outlet" FromRole="OutletTiming" ToRole="Outlet" />
+  </EntityType>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="SystemName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Category" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="CustomerRoles" Relationship="Model.CustomerRolePermissionMapping" FromRole="Permission" ToRole="CustomerRole" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OutletId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="DisplayName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Code" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="IsVeg" Type="Boolean" Nullable="false" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="AttributeGroupId" Type="Int32" />
+    <Property Name="Published" Type="Boolean" Nullable="false" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OldId" Type="Int32" />
+    <Property Name="OldParentId" Type="Int32" />
+    <Property Name="HasVariants" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="AttributeGroup" Relationship="Model.FK_Product_AttributeGroup" FromRole="Product" ToRole="AttributeGroup" />
+    <NavigationProperty Name="Outlet" Relationship="Model.FK_Product_Outlet" FromRole="Product" ToRole="Outlet" />
+    <NavigationProperty Name="OutletProductExcludes" Relationship="Model.FK_OutletProductExclude_Product" FromRole="Product" ToRole="OutletProductExclude" />
+    <NavigationProperty Name="ProductCategoryMappings" Relationship="Model.FK_ProductCategoryMapping_Product" FromRole="Product" ToRole="ProductCategoryMapping" />
+  </EntityType>
+  <EntityType Name="ProductCategoryMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="Model.FK_ProductCategoryMapping_Category" FromRole="ProductCategoryMapping" ToRole="Category" />
+    <NavigationProperty Name="Product" Relationship="Model.FK_ProductCategoryMapping_Product" FromRole="ProductCategoryMapping" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="QueuedEmail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Priority" Type="Int32" Nullable="false" />
+    <Property Name="From" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="FromName" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="To" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ToName" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="CC" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Bcc" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Subject" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="Body" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SentTries" Type="Int32" Nullable="false" />
+    <Property Name="SentOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="QueuedSM">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Priority" Type="Int32" Nullable="false" />
+    <Property Name="MobileNumber" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="Body" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SentTries" Type="Int32" Nullable="false" />
+    <Property Name="SentOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Resource">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ScheduleTask">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Seconds" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <Property Name="StopOnError" Type="Boolean" Nullable="false" />
+    <Property Name="LastStartUtc" Type="DateTime" Precision="3" />
+    <Property Name="LastEndUtc" Type="DateTime" Precision="3" />
+    <Property Name="LastSuccessUtc" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SearchLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Notes" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="CustomerId" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Customer" Relationship="Model.FK_SearchLog_Customer" FromRole="SearchLog" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="SelectionType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SelectionValues" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Attributes" Relationship="Model.FK_Attribute_SelectionType" FromRole="SelectionType" ToRole="Attribute" />
+    <NavigationProperty Name="AttributeItems" Relationship="Model.FK_AttributeItem_SelectionType" FromRole="SelectionType" ToRole="AttributeItem" />
+  </EntityType>
+  <EntityType Name="Setting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="2000" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SiteContent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="SeoName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="MetaTitle" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="MetaDescription" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="MetaKeywords" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="TaxGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Outlets" Relationship="Model.FK_Outlet_TaxGroup" FromRole="TaxGroup" ToRole="Outlet" />
+    <NavigationProperty Name="TaxGroupItems" Relationship="Model.FK_TaxGroupItem_TaxGroup" FromRole="TaxGroup" ToRole="TaxGroupItem" />
+  </EntityType>
+  <EntityType Name="TaxGroupItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TaxGroupId" Type="Int32" Nullable="false" />
+    <Property Name="TaxName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="CalculateOrder" Type="Int32" Nullable="false" />
+    <Property Name="TaxType" Type="Int32" Nullable="false" />
+    <Property Name="Rate" Type="Decimal" Nullable="false" Precision="8" Scale="2" />
+    <Property Name="CalculateOn" Type="Int32" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="OrderTaxes" Relationship="Model.FK_OrderTax_TaxGroupItem" FromRole="TaxGroupItem" ToRole="OrderTax" />
+    <NavigationProperty Name="TaxGroup" Relationship="Model.FK_TaxGroupItem_TaxGroup" FromRole="TaxGroupItem" ToRole="TaxGroup" />
+  </EntityType>
+  <Association Name="FK_Attribute_AttributeType">
+    <End Role="AttributeType" Type="Model.AttributeType" Multiplicity="0..1" />
+    <End Role="Attribute" Type="Model.Attribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttributeType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Attribute">
+        <PropertyRef Name="AttributeTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Attribute_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="Attribute" Type="Model.Attribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Attribute">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Attribute_SelectionType">
+    <End Role="SelectionType" Type="Model.SelectionType" Multiplicity="1" />
+    <End Role="Attribute" Type="Model.Attribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SelectionType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Attribute">
+        <PropertyRef Name="SelectionTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeGroupItem_Attribute">
+    <End Role="Attribute" Type="Model.Attribute" Multiplicity="1" />
+    <End Role="AttributeGroupItem" Type="Model.AttributeGroupItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attribute">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AttributeGroupItem">
+        <PropertyRef Name="AttributeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeItem_Attribute">
+    <End Role="Attribute" Type="Model.Attribute" Multiplicity="1" />
+    <End Role="AttributeItem" Type="Model.AttributeItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attribute">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AttributeItem">
+        <PropertyRef Name="AttributeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeGroup_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="AttributeGroup" Type="Model.AttributeGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AttributeGroup">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeGroupItem_AttributeGroup">
+    <End Role="AttributeGroup" Type="Model.AttributeGroup" Multiplicity="1" />
+    <End Role="AttributeGroupItem" Type="Model.AttributeGroupItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttributeGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AttributeGroupItem">
+        <PropertyRef Name="AttributeGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_AttributeGroup">
+    <End Role="AttributeGroup" Type="Model.AttributeGroup" Multiplicity="0..1" />
+    <End Role="Product" Type="Model.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttributeGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="AttributeGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeItem_SelectionType">
+    <End Role="SelectionType" Type="Model.SelectionType" Multiplicity="0..1" />
+    <End Role="AttributeItem" Type="Model.AttributeItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SelectionType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AttributeItem">
+        <PropertyRef Name="SelectionTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderItemAttributeItem_AttributeItem">
+    <End Role="AttributeItem" Type="Model.AttributeItem" Multiplicity="1" />
+    <End Role="OrderItemAttributeItem" Type="Model.OrderItemAttributeItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttributeItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderItemAttributeItem">
+        <PropertyRef Name="AttributeItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BanquetEnquiry_OccasionType">
+    <End Role="OccasionType" Type="Model.OccasionType" Multiplicity="1" />
+    <End Role="BanquetEnquiry" Type="Model.BanquetEnquiry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OccasionType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BanquetEnquiry">
+        <PropertyRef Name="OccassionTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BanquetEnquiry_OutletBanquet">
+    <End Role="OutletBanquet" Type="Model.OutletBanquet" Multiplicity="1" />
+    <End Role="BanquetEnquiry" Type="Model.BanquetEnquiry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OutletBanquet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BanquetEnquiry">
+        <PropertyRef Name="BanquetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BanquetImageGallary_OutletBanquet">
+    <End Role="OutletBanquet" Type="Model.OutletBanquet" Multiplicity="1" />
+    <End Role="BanquetImageGallary" Type="Model.BanquetImageGallary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OutletBanquet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BanquetImageGallary">
+        <PropertyRef Name="OutletBanquetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Category_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="Category" Type="Model.Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Category">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCategoryMapping_Category">
+    <End Role="Category" Type="Model.Category" Multiplicity="1" />
+    <End Role="ProductCategoryMapping" Type="Model.ProductCategoryMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductCategoryMapping">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Location_City">
+    <End Role="City" Type="Model.City" Multiplicity="1" />
+    <End Role="Location" Type="Model.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactUs_ContactSubject">
+    <End Role="ContactSubject" Type="Model.ContactSubject" Multiplicity="1" />
+    <End Role="ContactUs" Type="Model.ContactU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContactSubject">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContactUs">
+        <PropertyRef Name="ContactSubjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MobileBanner_ContentType">
+    <End Role="ContentType" Type="Model.ContentType" Multiplicity="1" />
+    <End Role="MobileBanner" Type="Model.MobileBanner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContentType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MobileBanner">
+        <PropertyRef Name="ContentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CouponOrderMapping_Coupon">
+    <End Role="Coupon" Type="Model.Coupon" Multiplicity="1" />
+    <End Role="CouponOrderMapping" Type="Model.CouponOrderMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Coupon">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CouponOrderMapping">
+        <PropertyRef Name="CouponId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CouponOutletMapping_Coupon">
+    <End Role="Coupon" Type="Model.Coupon" Multiplicity="1" />
+    <End Role="CouponOutletMapping" Type="Model.CouponOutletMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Coupon">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CouponOutletMapping">
+        <PropertyRef Name="CouponId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CouponOrderMapping_Customer">
+    <End Role="Customer" Type="Model.Customer" Multiplicity="1" />
+    <End Role="CouponOrderMapping" Type="Model.CouponOrderMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CouponOrderMapping">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CouponOrderMapping_Order">
+    <End Role="Order" Type="Model.Order" Multiplicity="1" />
+    <End Role="CouponOrderMapping" Type="Model.CouponOrderMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CouponOrderMapping">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CouponOutletMapping_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="CouponOutletMapping" Type="Model.CouponOutletMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CouponOutletMapping">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutletCuisineMapping_Cuisine">
+    <End Role="Cuisine" Type="Model.Cuisine" Multiplicity="1" />
+    <End Role="OutletCuisineMapping" Type="Model.OutletCuisineMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cuisine">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutletCuisineMapping">
+        <PropertyRef Name="CuisineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_CustomerRole">
+    <End Role="CustomerRole" Type="Model.CustomerRole" Multiplicity="0..1" />
+    <End Role="Customer" Type="Model.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerRole">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="CustomerRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerAddress_Customer">
+    <End Role="Customer" Type="Model.Customer" Multiplicity="1" />
+    <End Role="CustomerAddress" Type="Model.CustomerAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerAddress">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerHistory_Customer">
+    <End Role="Customer" Type="Model.Customer" Multiplicity="1" />
+    <End Role="CustomerHistory" Type="Model.CustomerHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerHistory">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerToken_Customer">
+    <End Role="Customer" Type="Model.Customer" Multiplicity="1" />
+    <End Role="CustomerToken" Type="Model.CustomerToken" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerToken">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerVerification_Customer">
+    <End Role="Customer" Type="Model.Customer" Multiplicity="1" />
+    <End Role="CustomerVerification" Type="Model.CustomerVerification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerVerification">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Customer">
+    <End Role="Customer" Type="Model.Customer" Multiplicity="1" />
+    <End Role="Order" Type="Model.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SearchLog_Customer">
+    <End Role="Customer" Type="Model.Customer" Multiplicity="0..1" />
+    <End Role="SearchLog" Type="Model.SearchLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SearchLog">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Log_Customer">
+    <End Role="Customer" Type="Model.Customer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Log" Type="Model.Log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Log">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerHistory_CustomerActivityCode">
+    <End Role="CustomerActivityCode" Type="Model.CustomerActivityCode" Multiplicity="1" />
+    <End Role="CustomerHistory" Type="Model.CustomerHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerActivityCode">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerHistory">
+        <PropertyRef Name="ActivityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_CustomerAddress">
+    <End Role="CustomerAddress" Type="Model.CustomerAddress" Multiplicity="0..1" />
+    <End Role="Order" Type="Model.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerAddress">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="ShippingAddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_CustomerAddress1">
+    <End Role="CustomerAddress" Type="Model.CustomerAddress" Multiplicity="0..1" />
+    <End Role="Order" Type="Model.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerAddress">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="BillingAddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerHistory_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="0..1" />
+    <End Role="CustomerHistory" Type="Model.CustomerHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerHistory">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutletFacilityMapping_Facility">
+    <End Role="Facility" Type="Model.Facility" Multiplicity="1" />
+    <End Role="OutletFacilityMapping" Type="Model.OutletFacilityMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Facility">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutletFacilityMapping">
+        <PropertyRef Name="FacilityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Outlet_Location">
+    <End Role="Location" Type="Model.Location" Multiplicity="1" />
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Outlet">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_OrderDeliveryType">
+    <End Role="OrderDeliveryType" Type="Model.OrderDeliveryType" Multiplicity="1" />
+    <End Role="Order" Type="Model.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderDeliveryType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="OrderDeliveryTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_OrderSource">
+    <End Role="OrderSource" Type="Model.OrderSource" Multiplicity="0..1" />
+    <End Role="Order" Type="Model.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderSource">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="OrderSourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="Order" Type="Model.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderHistory_Order">
+    <End Role="Order" Type="Model.Order" Multiplicity="1" />
+    <End Role="OrderHistory" Type="Model.OrderHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderHistory">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderItem_Order">
+    <End Role="Order" Type="Model.Order" Multiplicity="1" />
+    <End Role="OrderItem" Type="Model.OrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderItem">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderTax_Order">
+    <End Role="Order" Type="Model.Order" Multiplicity="1" />
+    <End Role="OrderTax" Type="Model.OrderTax" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderTax">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OrderNote_Order">
+    <End Role="Order" Type="Model.Order" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OrderNote" Type="Model.OrderNote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderNote">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderHistory_OrderActivityCode">
+    <End Role="OrderActivityCode" Type="Model.OrderActivityCode" Multiplicity="1" />
+    <End Role="OrderHistory" Type="Model.OrderHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderActivityCode">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderHistory">
+        <PropertyRef Name="ActivityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderItemAttributeItem_OrderItem">
+    <End Role="OrderItem" Type="Model.OrderItem" Multiplicity="1" />
+    <End Role="OrderItemAttributeItem" Type="Model.OrderItemAttributeItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderItemAttributeItem">
+        <PropertyRef Name="OrderItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderTax_TaxGroupItem">
+    <End Role="TaxGroupItem" Type="Model.TaxGroupItem" Multiplicity="1" />
+    <End Role="OrderTax" Type="Model.OrderTax" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaxGroupItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderTax">
+        <PropertyRef Name="TaxGroupItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Outlet_TaxGroup">
+    <End Role="TaxGroup" Type="Model.TaxGroup" Multiplicity="0..1" />
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaxGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Outlet">
+        <PropertyRef Name="TaxGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutletBanquet_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="OutletBanquet" Type="Model.OutletBanquet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutletBanquet">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutletBanquetPackages_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="OutletBanquetPackages" Type="Model.OutletBanquetPackage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutletBanquetPackages">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutletBuffet_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="OutletBuffet" Type="Model.OutletBuffet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutletBuffet">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutletContact_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="OutletContact" Type="Model.OutletContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutletContact">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutletCuisineMapping_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="OutletCuisineMapping" Type="Model.OutletCuisineMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutletCuisineMapping">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutletDetails_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="OutletDetail" Type="Model.OutletDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutletDetail">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutletFacilityMapping_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="OutletFacilityMapping" Type="Model.OutletFacilityMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutletFacilityMapping">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutletFixedMeal_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="OutletFixedMeal" Type="Model.OutletFixedMeal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutletFixedMeal">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutletImageGallary_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="OutletImageGallary" Type="Model.OutletImageGallary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutletImageGallary">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutletMedia_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="OutletMedia" Type="Model.OutletMedia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutletMedia">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutletOffer_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="OutletOffer" Type="Model.OutletOffer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutletOffer">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutletOrderTakingTime_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="OutletTiming" Type="Model.OutletTiming" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutletTiming">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutletProductExclude_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="OutletProductExclude" Type="Model.OutletProductExclude" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutletProductExclude">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutletRating_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="OutletRating" Type="Model.OutletRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutletRating">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Outlet">
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="1" />
+    <End Role="Product" Type="Model.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutletProductExclude_Product">
+    <End Role="Product" Type="Model.Product" Multiplicity="1" />
+    <End Role="OutletProductExclude" Type="Model.OutletProductExclude" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutletProductExclude">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCategoryMapping_Product">
+    <End Role="Product" Type="Model.Product" Multiplicity="1" />
+    <End Role="ProductCategoryMapping" Type="Model.ProductCategoryMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductCategoryMapping">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaxGroupItem_TaxGroup">
+    <End Role="TaxGroup" Type="Model.TaxGroup" Multiplicity="1" />
+    <End Role="TaxGroupItem" Type="Model.TaxGroupItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaxGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TaxGroupItem">
+        <PropertyRef Name="TaxGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CustomerFavouriteOutletMapping">
+    <End Role="Customer" Type="Model.Customer" Multiplicity="*" />
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="*" />
+  </Association>
+  <Association Name="CustomerOutletMapping">
+    <End Role="Customer" Type="Model.Customer" Multiplicity="*" />
+    <End Role="Outlet" Type="Model.Outlet" Multiplicity="*" />
+  </Association>
+  <Association Name="CustomerRolePermissionMapping">
+    <End Role="CustomerRole" Type="Model.CustomerRole" Multiplicity="*" />
+    <End Role="Permission" Type="Model.Permission" Multiplicity="*" />
+  </Association>
+  <ComplexType Name="GetNearByOutlet_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="ParentId" Nullable="true" />
+    <Property Type="String" Name="SeoName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="ShortCode" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="LocationId" Nullable="false" />
+    <Property Type="String" Name="Phone1" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Phone2" Nullable="true" MaxLength="20" />
+    <Property Type="Boolean" Name="IsVeg" Nullable="false" />
+    <Property Type="Boolean" Name="IsNonVeg" Nullable="false" />
+    <Property Type="Boolean" Name="IsAlaCarte" Nullable="false" />
+    <Property Type="Boolean" Name="IsBuffet" Nullable="false" />
+    <Property Type="Boolean" Name="IsFixedMeal" Nullable="false" />
+    <Property Type="Boolean" Name="IsTableBooking" Nullable="false" />
+    <Property Type="Boolean" Name="IsOnlineOrder" Nullable="false" />
+    <Property Type="Boolean" Name="IsTakeAway" Nullable="false" />
+    <Property Type="String" Name="TakeAwayTime" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TakeAwayCondition" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="IsHomeDelivery" Nullable="false" />
+    <Property Type="Decimal" Name="HomeDeliveryAmount" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="HomeDeliveryDistance" Nullable="true" />
+    <Property Type="String" Name="HomeDeliveryTime" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="HomeDeliveryCharge" Nullable="true" Precision="19" />
+    <Property Type="String" Name="HomeDeliveryCondition" Nullable="true" MaxLength="500" />
+    <Property Type="Decimal" Name="Rating" Nullable="true" Precision="2" Scale="1" />
+    <Property Type="String" Name="Logo" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="Published" Nullable="false" />
+    <Property Type="Boolean" Name="Deleted" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="TaxGroupId" Nullable="true" />
+    <Property Type="String" Name="Banner" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Latitude" Nullable="true" />
+    <Property Type="Double" Name="Longitude" Nullable="true" />
+    <Property Type="Double" Name="Distance" Nullable="true" />
+  </ComplexType>
+</Schema>
